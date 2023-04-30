@@ -9,6 +9,12 @@ $nb_reservation = $_POST['nb_reservation'];
 $description = $_POST['description'];
 $prix_billet = $_POST['prix_billet'];
 
+/*// Vérification de la date
+$today = date('Y-m-d');
+if ($date < $today) {
+  header("Location: /projet/view/index.php");
+}*/
+
 try {
   $sql = "INSERT INTO evenements (nomevent, nb_place, domaine, date, nb_reservation, description, prix_billet) VALUES (:nom, :nb_reservation, :domaine, :date, :nb_place, :description, :prix_billet)";
   $stmt = $conn->prepare($sql);
