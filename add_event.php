@@ -1,5 +1,5 @@
 <?php
-include_once 'connection.php';
+include_once 'connection.php';//ne pas changer
 
 $nom = $_POST['nom'];
 $nb_place = $_POST['nb_place'];
@@ -17,6 +17,7 @@ if ($date < $today) {
 
 try {
   $sql = "INSERT INTO evenements (nomevent, nb_place, domaine, date, nb_reservation, description, prix_billet) VALUES (:nom, :nb_reservation, :domaine, :date, :nb_place, :description, :prix_billet)";
+  //changer enfonction de ta base de données
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':nom', $nom);
   $stmt->bindParam(':nb_place', $nb_place);
@@ -26,7 +27,7 @@ try {
   $stmt->bindParam(':description', $description);
   $stmt->bindParam(':prix_billet', $prix_billet);
   $stmt->execute();
-  header("Location: /projet/view/dist");
+  header("Location: /projet/view/dist");//dist est la page du cube de loading
 } catch(PDOException $e) {
   echo "Erreur: " . $e->getMessage();
 }
