@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Administrateur </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="YAWMIET.png">
+        <link rel="shortcut icon" href="favicon.ico"> <!--icône pour être affichée dans l'onglet du navigateur-->
+
+        <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+        <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/magnific-popup.css" rel="stylesheet">
+        <link href="css/tooplate-waso-strategy.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/dash.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+
+        <style type="text/css">/* Chart.js */
+            @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
+        </style>
+    </head>
+
+    <body>
+<!------------------------------------------------------------ Left Panel --------------------------------------------------------->
+
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">       
+
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i> Espace Admin </a>
+                        </li>
+                        <h3 class="menu-title"> Gestions</h3><!-- /.menu-title -->
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Evénement</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <!-- <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li> -->
+                                <li><i class="fa fa-table"></i><a href="indexAdd.html">Ajout</a></li>
+                                <li><i class="fa fa-table"></i><a href="indexUpdate.html">Modification</a></li>
+                                <li><i class="fa fa-table"></i><a href="indexSup.html">Suppression</a></li>
+                                <li><i class="fa fa-table"></i><a href="indexAff.html">Affichage</a></li> 
+                            </ul>
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Reservation</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <!-- <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li> -->
+                                <li><i class="fa fa-table"></i><a href="table-utilisateur.php">Ajout</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-reservation.php">Modification</a></li>
+                                <li><i class="fa fa-table"></i><a href="table_chambre.php">Suppression</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-marketing.php">Affichage</a></li> 
+                            </ul>
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Life style</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <!-- <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li> -->
+                                <li><i class="fa fa-table"></i><a href="table-utilisateur.php">Utilisateur</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-reservation.php">Reservation</a></li>
+                                <li><i class="fa fa-table"></i><a href="table_chambre.php">chambre</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-marketing.php">Hotel</a></li> 
+                            </ul>
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Produit</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <!-- <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li> -->
+                                <li><i class="fa fa-table"></i><a href="table-utilisateur.php">Utilisateur</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-reservation.php">Reservation</a></li>
+                                <li><i class="fa fa-table"></i><a href="table_chambre.php">chambre</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-marketing.php">Hotel</a></li> 
+                            </ul>
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Actualité</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <!-- <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li> -->
+                                <li><i class="fa fa-table"></i><a href="table-utilisateur.php">Utilisateur</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-reservation.php">Reservation</a></li>
+                                <li><i class="fa fa-table"></i><a href="table_chambre.php">chambre</a></li>
+                                <li><i class="fa fa-table"></i><a href="table-marketing.php">Hotel</a></li> 
+                            </ul>
+                        </li>
+                    
+                        <h3 class="menu-title">Suppléments</h3><!-- /.menu-title -->
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Login</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">S'identifier</a></li>
+                                <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">S'inscrire</a></li>
+                                <li><i class="menu-icon fa fa-paper-plane"></i></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </aside>
+<!----------------------------------------------------------------------left-panel ------------------------------------------------------------>
+
+<!----------------------------------------------------------------------Right Panel------------------------------------------------------------------>
+
+        <div id="right-panel" class="right-panel">
+
+ <!----------------------------------------------------------------SUPPRIMER------------------------------------------------------------------>
+<br><br>
+ <h1>Supprimer un événement</h1>
+ <br>
+ <form action="delete_event.php" method="POST">
+     <label for="ids">ID de l'événement à supprimer:</label>
+     <input type="number" id="ids" name="ids"><br><br>
+
+     <input type="submit" value="Supprimer l'événement" >
+ </form>
+
+<!---------------------------------------------------------------END-SUPPRIMER------------------------------------------------------------------>
+
+<br><br><br>
+
+        </div>
+
+<!-------------------------------------------------------------Fin-Right Panel------------------------------------------------------------------>
+
+        <script src="vendors/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+        <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
+        <script src="assets/js/dashboard.js"></script>
+        <script src="assets/js/widgets.js"></script>
+        <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+        <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/validation.js"></script>
+        <script>
+            (function($) {
+                "use strict";
+
+                jQuery('#vmap').vectorMap({
+                    map: 'world_en',
+                    backgroundColor: null,
+                    color: '#ffffff',
+                    hoverOpacity: 0.7,
+                    selectedColor: '#1de9b6',
+                    enableZoom: true,
+                    showTooltip: true,
+                    values: sample_data,
+                    scaleColors: ['#1de9b6', '#03a9f5'],
+                    normalizeFunction: 'polynomial'
+                });
+            })(jQuery);
+        </script>
+        <div class="jqvmap-label" style="display: none;"></div>
+
+    </body>
+</html>
