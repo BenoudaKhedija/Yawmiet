@@ -178,7 +178,7 @@ require 'connection.php';
                  <!-- <a href="index.html" class="navbar-brand">
                     <img src="YAWMIET.png" alt="Yawmiet">
                   </a>  -------------------pour mettre image et non pas un texte --------->
-                <a href="index.html" class="text-danger">Yawmiet</a>
+                <a href="index2.html" class="text-danger">Yawmiet</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -187,7 +187,7 @@ require 'connection.php';
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html#section_1"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
+                            <a class="nav-link active" href="index2.html"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
                         </li>
     
                         <li class="nav-item">
@@ -195,18 +195,18 @@ require 'connection.php';
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_3"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
+                            <a class="nav-link inactive" href="BonsPlans.html"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_4"><small class="small-title"><strong class="text-warning">04</strong></small>  panier </a>
+                            <a class="nav-link inactive" href="BLOG.php"><small class="small-title"><strong class="text-warning">04</strong></small>  Blog </a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_5"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
+                            <a class="nav-link inactive" href="login.php"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
                         </li>
                     </ul>
-                <div>    
+                <div>         
             </div>
         </div></div></nav>
 
@@ -236,14 +236,14 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 <!-- Affichage des événements -->
 <div class="event-grid">
     <?php foreach ($events as $event): ?>
-        <div class="event">
-            <a href="aff_event.php?idevent=<?php echo $event['idevent']; ?>">
-                <img src="<?php echo $event['image']; ?>" alt="<?php echo $event['nomevent']; ?>">
-                <h2><?php echo $event['nomevent']; ?></h2>
-                <p><?php echo $event['description']; ?></p>
-            </a>
-            <div class="overlay"></div>
-        </div>
+        <a href="aff_event.php?idevent=<?php echo $event['idevent']; ?>">
+            <div class="event">
+                    <img src="<?php echo $event['image']; ?>" alt="<?php echo $event['nomevent']; ?>">
+                    <h2><?php echo $event['nomevent']; ?></h2>
+                    <p><?php echo $event['description']; ?></p>
+                    <div class="overlay"></div>
+            </div>
+        </a>
     <?php endforeach; ?>
 </div>
 

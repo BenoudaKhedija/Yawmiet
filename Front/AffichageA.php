@@ -4,33 +4,6 @@ require 'connection.php';
 
 <!doctype html>
 <html lang="en">
-    <style>
-        table {
-                background-color: #fff;
-                border: 1px solid #ccc;
-                padding: 20px;
-                margin-bottom: 20px;
-                width: 50%;
-                margin: auto;
-                }
-
-        th {
-                background-color: #f9c10b;
-                color: white;
-                font-weight: bold;
-                padding: 10px;
-                border: 1px solid #ddd;
-                }
-
-         td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                }
-
-        tr:nth-child(even) {
-                background-color: #f2f2f2;
-                }
-    </style>
 
     <head>
         <meta charset="utf-8">
@@ -51,97 +24,33 @@ require 'connection.php';
         <link href="css/style.css" rel="stylesheet">
 
         <style>
-            .marge-table {
-            margin: 0 auto; /* centre le tableau horizontalement */
-            width: 80%; /* définit la largeur du tableau */
-            }
-            .calendar-cell {
-            background-color: #f9f9f9;
+            .event {
+            position: relative;
+            overflow: hidden;
             border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            font-family: Arial, sans-serif;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #ccc;
+            }
+
+            .event .overlay {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            }
+
+            .event:hover .overlay {
+            opacity: 1;
             }
 
             .event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.event {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px #ccc;
-}
-
-.event img {
-  width: 100%;
-  height: auto;
-}
-
-.event h2 {
-  margin: 10px;
-}
-
-.event p {
-  margin: 0px 10px 10px;
-}
-
-.event .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.event:hover .overlay {
-  opacity: 1;
-}
-
-.event .overlay:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-.event-grid {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-
-#description-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    display: none;
-}
-
-#event-title {
-    font-size: 24px;
-    margin: 0;
-}
-
-#event-description {
-    margin: 10px 0 0 0;
-}
-
+                margin-left: 70px;
+                margin-right: 70px;
+            }
         </style>
 
     </head>
@@ -184,7 +93,7 @@ require 'connection.php';
                  <!-- <a href="index.html" class="navbar-brand">
                     <img src="YAWMIET.png" alt="Yawmiet">
                   </a>  -------------------pour mettre image et non pas un texte --------->
-                <a href="index.html" class="text-danger">Yawmiet</a>
+                <a href="index2.html" class="text-danger">Yawmiet</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -193,7 +102,7 @@ require 'connection.php';
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html#section_1"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
+                            <a class="nav-link active" href="index2.html"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
                         </li>
     
                         <li class="nav-item">
@@ -201,18 +110,18 @@ require 'connection.php';
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_3"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
+                            <a class="nav-link inactive" href="BonsPlans.html"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_4"><small class="small-title"><strong class="text-warning">04</strong></small>  panier </a>
+                            <a class="nav-link inactive" href="BLOG.php"><small class="small-title"><strong class="text-warning">04</strong></small>  Blog </a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_5"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
+                            <a class="nav-link inactive" href="login.php"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
                         </li>
                     </ul>
-                <div>    
+                <div>         
             </div>
         </div></div></nav>
 
@@ -243,14 +152,14 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 <!-- Affichage des événements -->
 <div class="event-grid">
     <?php foreach ($events as $event): ?>
-        <div class="event">
-            <a href="aff_event.php?idevent=<?php echo $event['idevent']; ?>">
-                <img src="<?php echo $event['image']; ?>" alt="<?php echo $event['nomevent']; ?>">
-                <h2><?php echo $event['nomevent']; ?></h2>
-                <p><?php echo $event['description']; ?></p>
-            </a>
-            <div class="overlay"></div>
-        </div>
+        <a href="aff_event.php?idevent=<?php echo $event['idevent']; ?>">
+            <div class="event">
+                    <img src="<?php echo $event['image']; ?>" alt="<?php echo $event['nomevent']; ?>">
+                    <h2><?php echo $event['nomevent']; ?></h2>
+                    <p><?php echo $event['description']; ?></p>
+                    <div class="overlay"></div>
+            </div>
+        </a>
     <?php endforeach; ?>
 </div>
 

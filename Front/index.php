@@ -4,33 +4,6 @@ require 'connection.php';
 
 <!doctype html>
 <html lang="en">
-    <style>
-        table {
-                background-color: #fff;
-                border: 1px solid #ccc;
-                padding: 20px;
-                margin-bottom: 20px;
-                width: 50%;
-                margin: auto;
-                }
-
-        th {
-                background-color: #f9c10b;
-                color: white;
-                font-weight: bold;
-                padding: 10px;
-                border: 1px solid #ddd;
-                }
-
-         td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                }
-
-        tr:nth-child(even) {
-                background-color: #f2f2f2;
-                }
-    </style>
 
     <head>
         <meta charset="utf-8">
@@ -50,80 +23,7 @@ require 'connection.php';
         <link href="css/tooplate-waso-strategy.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
-        <style>
-            .marge-table {
-            margin: 0 auto; /* centre le tableau horizontalement */
-            width: 80%; /* définit la largeur du tableau */
-            }
-            .calendar-cell {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            font-family: Arial, sans-serif;
-            }
-
-            .event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.event {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px #ccc;
-}
-
-.event img {
-  width: 100%;
-  height: auto;
-}
-
-.event h2 {
-  margin: 10px;
-}
-
-.event p {
-  margin: 0px 10px 10px;
-}
-
-.event .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.event:hover .overlay {
-  opacity: 1;
-}
-
-.event .overlay:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-.event-grid {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-        </style>
-
-    </head>
+        
     
     <body id="section_1">
 <!-----------------------------------------------------------------HEADER------------------------------------------------------------------>

@@ -8,7 +8,7 @@ $date = $_POST['date'];
 $nb_reservation = $_POST['nb_reservation'];
 $description = $_POST['description'];
 $prix_billet = $_POST['prix_billet'];
-$image = $_POST['image'];
+$image = $_POST['imageaj'];
 
 
 
@@ -30,6 +30,7 @@ try {
 } catch(PDOException $e) {
   echo "Erreur: " . $e->getMessage();
 }
+header("Location: /projet/view/Front/index2.html");
 
 $conn = null;
 ?>

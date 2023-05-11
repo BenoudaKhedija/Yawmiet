@@ -8,7 +8,7 @@ $date = $_POST['date'];
 $description = $_POST['description'];
 $prix_billet = $_POST['prix_billet'];
 $nb_place = $_POST['nb_place'];
-$image = $_POST['image'];
+$image = $_POST['imageaj'];
 
 
 // Requête pour vérifier si le nom existe dans la table "evenements"
@@ -43,8 +43,10 @@ catch(PDOException $e)
 } else {
  // echo "L'id de l'événement n'existe pas dans la base de données.";
   echo '<script>alertID();</script>';
-  header("Location: /projet/view/index.php");
+  header("Location: /projet/view/Front/BonsPlans.html");
 }
+header("Location: /projet/view/Front/BonsPlans.html");
+
 
 $conn = null;
 ?>

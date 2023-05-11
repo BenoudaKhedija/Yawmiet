@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-/*if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}*/
-
 if (!isset($_POST['idevent'])) 
 {
     header("Location: index.php");
@@ -43,6 +38,6 @@ try {
     $_SESSION['error_message'] = "Erreur : " . $e->getMessage();
 }
 
-header("Location: index.php");
+header("Location: index2.html");
 exit();
 ?>

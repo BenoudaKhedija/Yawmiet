@@ -4,34 +4,7 @@ require 'connection.php';
 
 <!doctype html>
 <html lang="en">
-    <style>
-        table {
-                background-color: #fff;
-                border: 1px solid #ccc;
-                padding: 20px;
-                margin-bottom: 20px;
-                width: 50%;
-                margin: auto;
-                }
-
-        th {
-                background-color: #f9c10b;
-                color: white;
-                font-weight: bold;
-                padding: 10px;
-                border: 1px solid #ddd;
-                }
-
-         td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                }
-
-        tr:nth-child(even) {
-                background-color: #f2f2f2;
-                }
-    </style>
-
+   
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,105 +23,11 @@ require 'connection.php';
         <link href="css/tooplate-waso-strategy.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
-        <style>
-            .marge-table {
-            margin: 0 auto; /* centre le tableau horizontalement */
-            width: 80%; /* définit la largeur du tableau */
-            }
-            .calendar-cell {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            font-family: Arial, sans-serif;
-            }
-
-            .event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.event {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px #ccc;
-}
-
-.event img {
-  width: 100%;
-  height: auto;
-}
-
-.event h2 {
-  margin: 10px;
-}
-
-.event p {
-  margin: 0px 10px 10px;
-}
-
-.event .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.event:hover .overlay {
-  opacity: 1;
-}
-
-.event .overlay:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-.event-grid {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-
-#description-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    display: none;
-}
-
-#event-title {
-    font-size: 24px;
-    margin: 0;
-}
-
-#event-description {
-    margin: 10px 0 0 0;
-}
-
-        </style>
-
     </head>
     
     <body id="section_1">
-<!-----------------------------------------------------------------HEADER------------------------------------------------------------------>
 
+<!-----------------------------------------------------------------HEADER------------------------------------------------------------------>
         <header class="site-header">
             <div class="container">
                 <div class="row align-items-center">
@@ -178,7 +57,7 @@ require 'connection.php';
                  <!-- <a href="index.html" class="navbar-brand">
                     <img src="YAWMIET.png" alt="Yawmiet">
                   </a>  -------------------pour mettre image et non pas un texte --------->
-                <a href="index.html" class="text-danger">Yawmiet</a>
+                <a href="index2.html" class="text-danger">Yawmiet</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -187,7 +66,7 @@ require 'connection.php';
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html#section_1"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
+                            <a class="nav-link active" href="index2.html"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
                         </li>
     
                         <li class="nav-item">
@@ -195,18 +74,18 @@ require 'connection.php';
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_3"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
+                            <a class="nav-link inactive" href="BonsPlans.html"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_4"><small class="small-title"><strong class="text-warning">04</strong></small>  panier </a>
+                            <a class="nav-link inactive" href="BLOG.php"><small class="small-title"><strong class="text-warning">04</strong></small>  Blog </a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_5"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
+                            <a class="nav-link inactive" href="login.php"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
                         </li>
                     </ul>
-                <div>    
+                <div>         
             </div>
         </div></div></nav>
 
@@ -214,29 +93,67 @@ require 'connection.php';
 
  <br><br><br>
 
-
 <body>
 
 <!------------------------------------------------------------------------affichage evenement-------------------------------------------------------------->
 <?php
- function getEventIdFromPreviousPage() {
-    if (isset($_SERVER['HTTP_REFERER'])) {
-        $url_parts = parse_url($_SERVER['HTTP_REFERER']);
-        if (isset($url_parts['query'])) {
-            parse_str($url_parts['query'], $query_params);
-            if (isset($query_params['idevent'])) {
-                return $query_params['idevent'];
-            }
-        }
-    }
-    return null;
-}
 
-$idevent = getEventIdFromPreviousPage();
-if ($idevent !== null) {
-    echo "ID de l'événement : " . $idevent;}
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bonsplans";
 
+// Connexion à la base de données
+$db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+$idevent = $_GET['idevent'];
+$sql = "SELECT * FROM evenements WHERE idevent = :idevent";
+$query = $db->prepare($sql);
+$query->bindParam(':idevent', $idevent);
+$query->execute();
+$event = $query->fetch(PDO::FETCH_ASSOC);
 ?>
+
+<!-- Affichage des informations de l'événement -->
+<div class="col-lg-6 col-12 d-flex flex-column mx-auto">
+    <div class="about-thumb bg-white shadow-lg">
+        <h2><?php echo $event['nomevent']; ?></h2>
+        <img src="<?php echo $event['image']; ?>" alt="<?php echo $event['nomevent']; ?>">
+        <p><strong>Domaine:</strong> <?php echo $event['domaine']; ?></p>
+        <p><strong>Date:</strong> <?php echo $event['date']; ?></p>
+        <p><strong>Prix:</strong> <?php echo $event['prix_billet']; ?> dt</p>
+        <p><strong>Description:</strong> <?php echo $event['description']; ?></p>
+
+        <form method="POST" action="indexR.php?idevent=<?php echo $event['idevent']; ?>"">
+                <input type="hidden" name="idevent" value="<?php echo $event['idevent']; ?>">
+                <input type="submit" name="submit" value="Réserver">
+            </form>
+                        
+                    
+                        <form method="POST" action="add_favorite.php">
+                            <input type="hidden" name="idevent" value="<?php echo $event['idevent']; ?>">
+                            <input type="submit" name="submit" value="Ajouter aux favoris">
+                        </form>
+
+        <div id="additional-section" class="d-none">
+            <h1>Ajouter une réservation</h1>
+            <form action="add_reservationA.php" method="POST" onsubmit="return passValidationn()">
+                <label for="nb_placeparreservation">Nombre de places:</label>
+                <input type="number" id="nb_placeparreservation" name="nb_placeparreservation"><br>
+
+                <label for="id_bookeur">ID du booker:</label>
+                <input type="number" id="id_bookeur" name="id_bookeur"><br>
+
+                <label for="ideventA">ID de l'événement:</label>
+                <input type="number" id="ideventA" name="ideventA"><br>
+
+                <input type="submit" value="Ajouter la réservation" >
+            </form><br>        </div>
+
+                   
+    </div>
+</div>
+
 <!----------------------------------------------------------------------fin-affichage-------------------------------------------------------------------->
 
 <br><br><br><br>
@@ -278,6 +195,15 @@ if ($idevent !== null) {
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/validation.js"></script>
+        <script>
+            function toggleSection() {
+                // Masquer le formulaire de réservation
+                document.querySelector('form[action="add_reservation.php"]').style.display = 'none';
+                // Afficher la section masquée
+                document.getElementById('additional-section').classList.remove('d-none');
+            }
+            </script>
+
 
     </body>
 </html>

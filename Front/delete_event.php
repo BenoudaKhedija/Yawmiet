@@ -12,5 +12,7 @@ try {
 } catch(PDOException $e) {
   echo "Erreur: " . $e->getMessage();
 }
+header("Location: /projet/view/Front/BonsPlans.html");
+
 $conn = null;
 ?>

@@ -166,7 +166,7 @@ require 'connection.php';
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html#section_1"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
+                            <a class="nav-link active" href="index2.html"><small class="small-title"><strong class="text-warning">01</strong></small> Accueil</a>
                         </li>
     
                         <li class="nav-item">
@@ -174,19 +174,18 @@ require 'connection.php';
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_3"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
+                            <a class="nav-link inactive" href="BonsPlans.html"><small class="small-title"><strong class="text-warning">03</strong></small>  bons plans</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_4"><small class="small-title"><strong class="text-warning">04</strong></small>  panier </a>
+                            <a class="nav-link inactive" href="BLOG.php"><small class="small-title"><strong class="text-warning">04</strong></small>  Blog </a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link inactive" href="index.html#section_5"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
+                            <a class="nav-link inactive" href="login.php"><small class="small-title"><strong class="text-warning">05</strong></small> Inscription</a>
                         </li>
                     </ul>
-                <div>
-                        
+                <div>         
             </div>
         </div></div></nav>
 
@@ -227,8 +226,8 @@ require 'connection.php';
                 <label for="nb_place">Nombre de places totales:</label>
                 <input type="number" id="nb_place" name="nb_place"><br><br>
                 
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image">
+                <label for="nom">Image:</label>
+                <input type="text" id="imageaj" name="imageaj"><br>
         
                 <input type="submit" value="Modifier l'événement">
             </form>
